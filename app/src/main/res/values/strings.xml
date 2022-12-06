@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">PAVIT_C0868150_MT</string>
+
+    <string-array name="cars">
+        <item>Please choose a car</item>
+        <item>BMW</item>
+        <item>AUDI</item>
+        <item>CARDILLAC</item>
+        <item>VOLKS WAGON</item>
+        <item>MERCEDES</item>
+        <item>PEUGEOT</item>
+    </string-array>
 </resources>

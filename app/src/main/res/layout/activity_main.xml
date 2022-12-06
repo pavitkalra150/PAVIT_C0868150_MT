@@ -4,15 +4,186 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="CAR RENT SERVICE"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <Spinner
+        android:id="@+id/carsdropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/cars"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+    
+    <EditText
+        android:id="@+id/dailyrent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Daily Rent"
+        android:ems="11"
+        android:editable="false"
+        app:layout_constraintTop_toBottomOf="@id/carsdropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/renttitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="How many days you wan to rent?"
+        android:textSize="15sp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintTop_toBottomOf="@id/dailyrent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/noofdays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="0 days"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/dailyrent"
+        app:layout_constraintStart_toEndOf="@id/renttitle"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"/>
+
+    <SeekBar
+        android:layout_margin="20dp"
+        android:id="@+id/daysbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/renttitle"
+        />
+
+    <TextView
+        android:id="@+id/drivertitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Drivers's Age"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/daysbar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/drivertitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+        <RadioButton
+            android:id="@+id/first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Less than 20" />
+
+        <RadioButton
+            android:id="@+id/second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Between 21 and 60" />
+
+        <RadioButton
+            android:id="@+id/third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Above 60" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/optionstitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Options"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/group"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <CheckBox
+        android:text="GPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/one"
+        app:layout_constraintTop_toBottomOf="@id/optionstitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"/>
+    <CheckBox
+        android:text="Child Seat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/two"
+        app:layout_constraintTop_toBottomOf="@id/optionstitle"
+        app:layout_constraintStart_toEndOf="@id/one"
+        android:layout_marginStart="20dp"/>
+    <CheckBox
+        android:text="Unlimited Mileage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/three"
+        app:layout_constraintTop_toBottomOf="@id/optionstitle"
+        app:layout_constraintStart_toEndOf="@id/two"
+        android:layout_marginStart="20dp"/>
+
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Amount"
+        android:textSize="17sp"
+        android:ems="8"
+        android:editable="false"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/one"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        />
+    <EditText
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Total Payment"
+        android:textSize="17sp"
+        android:ems="8"
+        android:editable="false"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/one"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:id="@+id/detailsbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Details"
+        app:layout_constraintTop_toBottomOf="@id/amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
