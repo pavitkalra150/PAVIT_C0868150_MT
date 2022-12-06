@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="30dp"
+    tools:context=".MainActivity2">
+
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Confirmation"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        />
+    <TextView
+        android:id="@+id/cartitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car :"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/title2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="40dp"
+        />
+    <TextView
+        android:id="@+id/carvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car_selection"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/title2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="57dp"
+        app:layout_constraintStart_toEndOf="@id/cartitle"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/daystitle"
+        android:textSize="20sp"
+        android:text="No. of Days:"
+        app:layout_constraintTop_toBottomOf="@id/cartitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"/>
+    <TextView
+        android:id="@+id/daysvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="days_value"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/carvalue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toEndOf="@id/daystitle"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/amounttitle"
+        android:textSize="20sp"
+        android:text="Amount:"
+        app:layout_constraintTop_toBottomOf="@id/daystitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"/>
+    <TextView
+        android:id="@+id/amountvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="payment_value"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/daysvalue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toEndOf="@id/amounttitle"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/paymenttitle"
+        android:textSize="20sp"
+        android:text="Payment:"
+        app:layout_constraintTop_toBottomOf="@id/amounttitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"/>
+    <TextView
+        android:id="@+id/paymentvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="payment_value"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/amountvalue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toEndOf="@id/paymenttitle"
+        />
+
+    <Button
+        android:id="@+id/order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PLACE ORDER"
+        app:layout_constraintTop_toBottomOf="@id/paymenttitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

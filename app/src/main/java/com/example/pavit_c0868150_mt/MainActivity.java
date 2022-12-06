@@ -3,6 +3,7 @@ package com.example.pavit_c0868150_mt;
 import androidx.annotation.ChecksSdkIntAtLeast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     double tamt;
     double roundtamt;
     String cartype;
-
+Button placeorder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         amount = findViewById(R.id.amount);
         payment = findViewById(R.id.total);
         detailsbtn = findViewById(R.id.detailsbtn);
+        placeorder = findViewById(R.id.placeorder);
         daysBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
@@ -84,6 +86,16 @@ public class MainActivity extends AppCompatActivity {
             if(checkError()) {
                 calculateAmount();
             }
+        });
+
+        placeorder.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+
+            intent.putExtra("car", cartype);
+            intent.putExtra("days", days);
+            intent.putExtra("amount", amt);
+            intent.putExtra("payment",tamt);
+            startActivity(intent);
         });
     }
 
@@ -204,5 +216,7 @@ public class MainActivity extends AppCompatActivity {
 
         tamt = amt + (amt * 0.13);
         payment.setText(String.valueOf(tamt) + "$");
+
+        placeorder.setVisibility(View.VISIBLE);
     }
 }

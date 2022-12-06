@@ -182,8 +182,18 @@
         android:text="View Details"
         app:layout_constraintTop_toBottomOf="@id/amount"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
         />
 
+    <Button
+        android:id="@+id/placeorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Confirmation"
+        app:layout_constraintTop_toBottomOf="@id/total"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@id/detailsbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
